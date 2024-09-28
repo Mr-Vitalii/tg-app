@@ -8,12 +8,15 @@ export const Header = () => {
 
 
     return (
-        <div className={styles.header}>
-            
-             <Button onClick={onClose}>Закрыть</Button>
-              <span className={'username'}>
-                {user?.username}
-            </span>
-    </div>
+        <header className={styles.header}>
+            <div className={styles.header__btn}>
+                 <Button onClick={onClose}>Закрыть</Button>
+            </div>
+        
+              <p className={styles.username}>
+               Приветсвуем Вас,  <span className={styles.header__userName}>{user?.username}</span> .
+               Мы рады что вы выбрали наш сервис.
+            </p>
+    </header>
     )
 }

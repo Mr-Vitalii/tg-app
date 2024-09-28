@@ -49,9 +49,11 @@ function App() {
     <>
       <div className='App'>
         <Header />
-        <Button onClick={onSend}>Отправить данные</Button>
-        <br />
-        <button onClick={onToggleButton}>toggle</button>
+        <div className='app-btn'>
+          <Button onClick={onSend}>Отправить данные</Button>
+        </div>
+        
+        {/* <button onClick={onToggleButton}>toggle</button> */}
       </div>
     </>
   )

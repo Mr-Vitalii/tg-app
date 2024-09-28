@@ -2,10 +2,24 @@
     width: 100%;
     height: 50px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 0 20px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
 }
 
 .username {
-    margin-left: auto;
+    font-size: 18px;
+    color: #000;
+}
+
+.header__btn {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.header__userName {
+    color: #710794;
+    font-size: 16px;
+    font-weight: 700;
 }
