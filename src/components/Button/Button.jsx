@@ -1,4 +1,4 @@
-import styles from "./Button.module.scss"
+import styles from "./Button.module.scss";
 
 // export const Button = (props) => {
 
@@ -10,7 +10,5 @@ import styles from "./Button.module.scss"
 // }
 
 export const Button = (props) => {
-       return (
-        <button {...props} className={styles.button}/>
-    );
+  return <button {...props} className={styles.button} />;
 };

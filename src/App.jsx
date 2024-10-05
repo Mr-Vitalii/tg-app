@@ -1,62 +1,63 @@
+import { useEffect } from "react";
+import "./App.scss";
 
-import { useEffect } from 'react';
-import './App.scss'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
-import { useMutation, useQueryClient } from "react-query";
-import * as apiClient from "./api-clients";
-import { useTelegram } from '../hooks/useTelegram';
 
-import { Button } from './components/Button/Button';
-import { Header } from './components/Header/Header';
+import { useTelegram } from "../hooks/useTelegram";
 
-useTelegram
 
-const data = {
-    "email": "222@gmail.com",
-    "password": "123456",
-    "firstName": "vitto2",
-    "lastName": "gugu2"
-}
+import { Layout } from "./layouts/Layout";
+import { Home } from "./pages/Home/Home";
+import { ProductsPage } from "./pages/ProductsPage/ProductsPage";
+import { FormPage } from "./pages/FormPage/FormPage";
+
+
+
+
 
 function App() {
-    
-  const {onToggleButton, tg} = useTelegram();
+  const { tg } = useTelegram();
 
   useEffect(() => {
     tg.ready();
-  }, [])
-    
-      const mutation = useMutation(apiClient.register, {
-    onSuccess: async () => {
-          // await queryClient.invalidateQueries("validateToken");
-          console.log("registration succsfull");
-          
-    },
-    onError: (error) => {
-      console.log(error.message);
-    },
-  });
- 
-    
-  const onSend = () => {
-    // mutation.mutate(data);
-    console.log(data);
-    
-  }
-  
+  }, []);
+
 
   return (
     <>
-      <div className='App'>
-        <Header />
-        <div className='app-btn'>
-          <Button onClick={onSend}>Отправить данные</Button>
-        </div>
-        
-        {/* <button onClick={onToggleButton}>toggle</button> */}
-      </div>
+      <Router>
+        <Routes>
+          <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+          />
+          <Route path="/product" element={
+            <Layout>
+               <ProductsPage/>
+            </Layout>} />
+            <Route path="/form" element={
+            <Layout>
+               <FormPage/>
+            </Layout>} />
+          <Route path="/next" element={
+            <Layout>
+            <span>Other page</span>
+            </Layout>} />
+          <Route  path="*" element={<Navigate to="/"/>}></Route>
+        </Routes>
+      </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

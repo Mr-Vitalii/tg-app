@@ -1,0 +1,21 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+// container mx-auto py-10 px-2 flex-1 md:px-6">
+
+
+.container {
+  margin: 0 auto;
+  padding: 40px 16px;
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 24px;
+  }
+}
