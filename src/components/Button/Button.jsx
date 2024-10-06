@@ -9,6 +9,9 @@ import styles from "./Button.module.scss";
 //   )
 // }
 
-export const Button = (props) => {
-  return <button {...props} className={styles.button} />;
+export const Button = ({ className = "", ...props }) => {
+
+
+
+  return <button {...props} className={`${styles.button} ${className || ""}`} />;
 };
