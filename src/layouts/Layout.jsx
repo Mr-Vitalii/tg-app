@@ -6,7 +6,7 @@ export const Layout = ({ children }) => {
   return (
     <div className={styles.layout}>
       <Header />
-       <div className={styles.container}>
+        <div className={styles.container}>
         {children}
       </div>
       <Footer />

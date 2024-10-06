@@ -2,23 +2,57 @@
   width: 100%;
   min-height: 75px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   padding: 10px 20px;
   margin-bottom: 20px;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
 }
 
 .username {
   font-size: 18px;
 }
 
-.header__btn {
-  display: block;
+.header__actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-bottom: 10px;
+  flex-grow: 1;
 }
 
-.header__userName {
-  color: #710794;
-  font-size: 16px;
-  font-weight: 700;
+.header__btn {
+  display: block;
+  background-color: #f40808;
+  border-radius: 50%;
+  padding: 10px 14px;
+
+  &:hover {
+    background-color: #b60808;
+  }
+}
+
+.header__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c9407;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #197209;
+  }
+
+  & a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+  }
 }

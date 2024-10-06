@@ -1,21 +1,34 @@
+import { Link } from "react-router-dom";
 import { useTelegram } from "../../../hooks/useTelegram";
 import { Button } from "../Button/Button";
+
+import logo from '../../assets/logo.svg';
+
 import styles from "./Header.module.scss";
 
 export const Header = () => {
-  const { user, onClose } = useTelegram();
+  const { onClose } = useTelegram();
 
   return (
     <header className={styles.header}>
-      <div className={styles.header__btn}>
-        <Button onClick={onClose}>Закрыть</Button>
+      <div className={styles.header__logo}>
+        <Link  to="/">
+           <img src={logo} alt="logo" />
+        </Link>
       </div>
-
-      <p className={styles.username}>
-        Приветсвуем Вас,{" "}
-        <span className={styles.header__userName}>{user?.username}</span> . Мы
-        рады что вы выбрали наш сервис.
-      </p>
+      <div className={styles.header__actions}>
+       
+        <div className={styles.header__link}>
+            <Link
+              to="/product"
+            >
+              Продукция
+            </Link>
+        </div>
+      </div>
+       <div>
+        <Button className={styles.header__btn} onClick={onClose}>X</Button>
+        </div>
     </header>
   );
 };

@@ -5,13 +5,12 @@
 }
 
 
-// container mx-auto py-10 px-2 flex-1 md:px-6">
-
 
 .container {
   margin: 0 auto;
   padding: 40px 16px;
   flex: 1;
+  max-width: 1200px;
 }
 
 @media screen and (max-width: 768px) {
